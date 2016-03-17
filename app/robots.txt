@@ -1,0 +1,4 @@
+User-agent: *
+Disalow: *
+Sitemap: http://site.ru/sitemap.xml
+Host: site.ru

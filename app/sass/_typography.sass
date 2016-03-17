@@ -1,0 +1,80 @@
+::selection
+	background-color: $b
+	color: #fff
+	text-shadow: none
+
+
+body
+	font-family: 'RobotoRegular', 'Sanserif'
+	font-size: 16px
+	color: #000
+	
+h1, h2, h3, h4, h5, h6, .top-mnu li, .logo
+	font-family: 'Romul', 'Sanserif'
+
+h1, h2, h3, h4, h5, h6, .desc
+	text-align: center
+
+h1, h2, h3, h4, h5, h6
+	margin: 0
+
+p, .desc
+	line-height: 1.618em
+	margin: 0 0 1em 0
+
+h1
+	font-size: 36px
+h2
+	font-size: 30px
+h3
+	font-size: 24px
+h4
+	font-size: 18px
+h5
+	font-size: 14px
+h6
+	font-size: 12px
+	
+a
+	color: inherit
+	&:active,
+	&:focus,
+	&:hover
+		color: inherit
+
+p
+	font-size: 18px
+	text-align: justify
+
+.desc
+	display: block
+	font-size: 20px
+.light .desc
+	color: inherit
+.dark .desc
+	color: inherit
+
+.out-link
+	text-decoration: none
+	&::after
+		content: ''
+		// font-family: 'Fontello'
+		// margin: 0 -em
+	
+.social-link
+	&:not(:last-child)
+		margin-right: 1em
+
+.tac
+	text-align: center
+	
+.tdn
+	&:active,
+	&:focus,
+	&:hover
+		text-decoration: none
+
+.logo
+	display: inline-block
+	font-size: 20px
+	text-transform: uppercase

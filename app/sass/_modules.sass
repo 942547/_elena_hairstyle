@@ -1,0 +1,62 @@
+.light
+	color: #000
+.dark
+	color: #fff
+	
+.bg-a
+	background: $a
+.bg-b
+	background: $b
+.bg-c
+	background: $c
+.bg-d
+	background: $d
+.bg-e
+	background: $e
+
+.section-t
+	padding: $sc 0 0 0
+.section-tb
+	padding: $sc 0
+.section-b
+	padding: 0 0 $sc 0
+	
+.table
+	display: table
+	.tr
+		display: table-row
+		.td
+			display: table-cell
+			vertical-align: middle
+	
+.col-wrap
+	margin-bottom: $sc
+	
+.m-center
+	margin-right: auto
+	margin-left: auto
+	
+.mobile
+	&:before
+		content: '\f10b'
+		font-family: 'Fontawesome'
+		margin-right: .3em
+
+
+// main styles
+.header
+	min-height: 600px
+.top-line
+	padding: 10px 0
+	.mobile
+		float: right
+.top-line-2
+	padding: 20px 0
+
+.top-mnu
+	padding: 10px 0
+	border-top: solid 1px $a
+	li
+		display: inline-block
+		&:not(:last-child)
+			margin-right: 1em

@@ -33,6 +33,7 @@ gulp.task('scripts', function() {
 		'app/libs/waypoints/waypoints.min.js',
 		'app/libs/animate/animate-css.js',
 		'app/libs/plugins-scroll/plugins-scroll.js',
+		'app/libs/jquery.jscroll/jquery.jscroll.min.js', /* Динамическая подгрузка контента про скролле */
 	])
 	.pipe(concat('libs.min.js'))
 	.pipe(uglify())

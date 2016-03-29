@@ -37,4 +37,37 @@ $(function() {
 
 	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
 
+	// Динамическая подгрузка контента про скролле
+	var content = $("#content"),
+		loading = "<img src='img/loading.gif' alt='Loading' />";
+
+	// Подгрузка первых записей
+	$.ajax({
+		url: "libs/jquery.jscroll/jscroll.php",
+		dataType: "json",
+		type: "GET",
+		data: {type: "start"},
+		success: function(data){
+
+			if(data){
+
+				content.append(data);
+				content.find(".jscroll-loading:first").slideUp(700, function(){
+
+					$(this).remove();
+				});
+
+				// Вызываем плагин
+				$("#content").jscroll({
+					autoTriggerUntil: 2,
+					loadingHtml: loading
+				});
+			};
+		},
+		beforeSend: function(){
+
+			content.append("<div class='jscroll-loading'>" + loading + "</div>");
+		}
+	});
+
 });

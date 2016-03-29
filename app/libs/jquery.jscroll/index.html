@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>jQuery jScroll</title>
+	<link href="main.css" type="text/css" rel="stylesheet" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+	<script src="jquery.jscroll.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	$(function(){
+
+		var content = $("#content"),
+			loading = "<img src='loading.gif' alt='Loading' />";
+
+		// Подгрузка первых записей
+		$.ajax({
+			url: "jscroll.php",
+			dataType: "json",
+			type: "GET",
+			data: {type: "start"},
+			success: function(data){
+
+				if(data){
+
+					content.append(data);
+					content.find(".jscroll-loading:first").slideUp(700, function(){
+
+						$(this).remove();
+					});
+
+					// Вызываем плагин
+					$("#content").jscroll({
+						autoTriggerUntil: 2,
+						loadingHtml: loading
+					});
+				};
+			},
+			beforeSend: function(){
+
+				content.append("<div class='jscroll-loading'>" + loading + "</div>");
+			}
+		});
+	});
+	</script> 
+</head> 
+</head>
+<body>
+	<div id="content">
+	</div>
+</body>
+</html>

@@ -22,6 +22,7 @@ node_modules/
 *.sublime-project
 *.log
 *.cache
+*.db
 
 # =========================
 # Operating System Files
